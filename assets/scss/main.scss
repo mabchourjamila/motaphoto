@@ -1,0 +1,25 @@
+// assets/scss/main.scss
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-menu li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.nav-menu li a:hover {
+    color: #0073aa;
+}
