@@ -19,6 +19,9 @@ add_action('after_setup_theme', 'motaphoto_theme_setup');
 
 // Enqueue des styles et scripts
 function motaphoto_enqueue_scripts() {
+    // Enqueue normalize.css pour réinitialiser les styles
+    wp_enqueue_style('normalize', get_template_directory_uri() . '/assets/css/normalize.css');
+
     // Enqueue le fichier style.css principal
     wp_enqueue_style('motaphoto-style', get_stylesheet_uri());
 
