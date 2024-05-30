@@ -166,4 +166,40 @@ header .burger {
   }
 }
 
+.footer {
+  font-family: "Space Mono", monospace;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  color: #000000;
+  font-size: 1rem;
+  text-transform: uppercase;
+  justify-content: center;
+}
+.footer__links {
+  display: flex;
+}
+.footer .footer__menu {
+  list-style: none;
+  display: flex;
+  gap: 70px;
+  padding: 0;
+  margin: 0;
+}
+.footer .footer__menu li {
+  display: inline;
+}
+.footer .footer__menu li a {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer .footer__menu li a:hover {
+  color: #FE5858;
+}
+.footer__text {
+  margin-left: 70px;
+}
+
 /*# sourceMappingURL=main.css.map */
