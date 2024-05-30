@@ -19,6 +19,9 @@ add_action('after_setup_theme', 'motaphoto_theme_setup');
 
 // Enqueue des styles et scripts
 function motaphoto_enqueue_scripts() {
+    // Enqueue Google Fonts
+    wp_enqueue_style('motaphoto-google-fonts', 'https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Poppins:wght@400;700&display=swap', false);
+
     // Enqueue normalize.css pour réinitialiser les styles
     wp_enqueue_style('normalize', get_template_directory_uri() . '/assets/css/normalize.css');
 
