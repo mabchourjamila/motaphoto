@@ -1,0 +1,196 @@
+header {
+    background-color: $background-color;
+    color: $black; 
+    height: 80px; // Hauteur du header
+    display: flex;
+    align-items: center;
+
+    ul {
+        list-style: none;
+    }
+
+    /* Navbar */
+    .navbar {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-around;
+        padding: 10px;
+        font-size: 1.1rem;
+        font-family: $font-title;
+        text-transform: uppercase;
+        background: $background-color;
+        color: $black;
+
+        &__links {
+            display: flex;
+            gap: 30px;
+
+            li {
+                padding: 0 10px;
+
+                a {
+                    color: $black;
+                    text-decoration: none;
+                }
+            }
+        }
+
+    }
+
+    .burger {
+        display: none;
+    }
+
+    /*  Small device */
+    @media screen and (max-width:767.98px) {
+        .navbar {
+            justify-content: space-between;
+            padding: 10px 30px;
+
+            &__links {
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                width: 0;
+                height: calc(100vh - 105px);
+                position: absolute;
+                top: 105px;
+                right: 0;
+                background: $red;
+                transform: translateX(110%);
+                transition: all .5s ease-in-out;
+                justify-content: center;
+                align-items: center;
+
+                li {
+                    transform: translateX(101%);
+                    transition: all .5s ease-in-out;
+
+                    a {
+                        display: block;
+                        font-size: 2.2rem;
+                        font-weight: 500;
+                        line-height: 40px;
+                        color: white;
+
+                        :hover {
+                            padding-left: 2rem;
+                            letter-spacing: 5px;
+                        }
+                    }
+
+                }
+
+            }
+        }
+
+        .show-nav {
+            ul {
+                background-color: $red;
+                width: 100%;
+                transform: translateX(0);
+
+                /* Animations */
+                :nth-child(1) {
+                    transition: all 1s ease-out;
+                }
+
+                :nth-child(2) {
+                    transition: all 1.3s ease-out;
+                }
+
+                :nth-child(3) {
+                    transition: all 1.6s ease-out;
+                }
+
+                :nth-child(4) {
+                    transition: all 1.9s ease-out;
+                }
+
+                li {
+                    transform: translateX(0);
+
+                    a {
+                        transition: all .4s ease-in-out;
+                    }
+                }
+            }
+        }
+
+        /* Toggle menu */
+        .burger {
+            display: block;
+            position: relative;
+            padding: 0;
+            width: 45px;
+            height: 45px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+
+            .bar {
+                display: block;
+                width: 45px;
+                height: 4px;
+                border-radius: 3px;
+                background: black;
+                transition: all .5s ease-in-out;
+            }
+
+            .bar:before,
+            .bar:after {
+                content: "";
+                width: 45px;
+                height: 4px;
+                position: absolute;
+                left: 0;
+                background: black;
+                border-radius: 3px;
+                transition: all .5s ease-in-out;
+            }
+
+            .bar:before {
+                transform: translateY(-12px)
+            }
+
+            .bar:after {
+                transform: translateY(12px)
+            }
+
+
+        }
+
+        .show-nav .bar {
+            width: 0;
+            background: transparent;
+        }
+
+        .show-nav .bar::before {
+            transform: rotate(45deg);
+        }
+
+        .show-nav .bar::after {
+            transform: rotate(-45deg);
+        }
+
+
+    }
+
+    /*  Medium device - Bonus */
+    @media screen and (min-width:768px) {
+        li>a::after {
+            display: block;
+            content: "";
+            width: 0;
+            height: 1px;
+            background: black;
+            transition: width .4s;
+        }
+
+        li:hover>a::after {
+            width: 100%;
+        }
+    }
+
+}

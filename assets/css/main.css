@@ -1,0 +1,169 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #E5E5E5;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: white;
+  color: #000000;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  /* Navbar */
+  /*  Small device */
+  /*  Medium device - Bonus */
+}
+header ul {
+  list-style: none;
+}
+header .navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  padding: 10px;
+  font-size: 1.1rem;
+  font-family: "Space Mono", monospace;
+  text-transform: uppercase;
+  background: white;
+  color: #000000;
+}
+header .navbar__links {
+  display: flex;
+  gap: 30px;
+}
+header .navbar__links li {
+  padding: 0 10px;
+}
+header .navbar__links li a {
+  color: #000000;
+  text-decoration: none;
+}
+header .burger {
+  display: none;
+}
+@media screen and (max-width: 767.98px) {
+  header {
+    /* Toggle menu */
+  }
+  header .navbar {
+    justify-content: space-between;
+    padding: 10px 30px;
+  }
+  header .navbar__links {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 0;
+    height: calc(100vh - 105px);
+    position: absolute;
+    top: 105px;
+    right: 0;
+    background: #E00000;
+    transform: translateX(110%);
+    transition: all 0.5s ease-in-out;
+    justify-content: center;
+    align-items: center;
+  }
+  header .navbar__links li {
+    transform: translateX(101%);
+    transition: all 0.5s ease-in-out;
+  }
+  header .navbar__links li a {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 40px;
+    color: white;
+  }
+  header .navbar__links li a :hover {
+    padding-left: 2rem;
+    letter-spacing: 5px;
+  }
+  header .show-nav ul {
+    background-color: #E00000;
+    width: 100%;
+    transform: translateX(0);
+    /* Animations */
+  }
+  header .show-nav ul :nth-child(1) {
+    transition: all 1s ease-out;
+  }
+  header .show-nav ul :nth-child(2) {
+    transition: all 1.3s ease-out;
+  }
+  header .show-nav ul :nth-child(3) {
+    transition: all 1.6s ease-out;
+  }
+  header .show-nav ul :nth-child(4) {
+    transition: all 1.9s ease-out;
+  }
+  header .show-nav ul li {
+    transform: translateX(0);
+  }
+  header .show-nav ul li a {
+    transition: all 0.4s ease-in-out;
+  }
+  header .burger {
+    display: block;
+    position: relative;
+    padding: 0;
+    width: 45px;
+    height: 45px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  header .burger .bar {
+    display: block;
+    width: 45px;
+    height: 4px;
+    border-radius: 3px;
+    background: black;
+    transition: all 0.5s ease-in-out;
+  }
+  header .burger .bar:before,
+  header .burger .bar:after {
+    content: "";
+    width: 45px;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    background: black;
+    border-radius: 3px;
+    transition: all 0.5s ease-in-out;
+  }
+  header .burger .bar:before {
+    transform: translateY(-12px);
+  }
+  header .burger .bar:after {
+    transform: translateY(12px);
+  }
+  header .show-nav .bar {
+    width: 0;
+    background: transparent;
+  }
+  header .show-nav .bar::before {
+    transform: rotate(45deg);
+  }
+  header .show-nav .bar::after {
+    transform: rotate(-45deg);
+  }
+}
+@media screen and (min-width: 768px) {
+  header li > a::after {
+    display: block;
+    content: "";
+    width: 0;
+    height: 1px;
+    background: black;
+    transition: width 0.4s;
+  }
+  header li:hover > a::after {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
