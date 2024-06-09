@@ -4,6 +4,7 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Photographe</title>
     <?php wp_head(); ?>
 </head>
 
@@ -27,9 +28,6 @@
                 <span class="bar"></span>
             </button>
         </nav>
+        <?php get_template_part('/template-parts/modale'); ?>
     </header>
-
-    <?php wp_footer(); ?>
-</body>
-
-</html>
+    <main>

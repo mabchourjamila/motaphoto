@@ -10,6 +10,7 @@ function motaphoto_theme_setup() {
     // Enregistrer un menu
     register_nav_menus(array(
         'primary' => __('Primary Menu', 'motaphoto'),
+        'footer-menu' => __('Footer Menu', 'motaphoto')
     ));
 
     // Ajouter le support pour les formats de publication
@@ -19,7 +20,7 @@ add_action('after_setup_theme', 'motaphoto_theme_setup');
 
 // Enqueue des styles et scripts
 function motaphoto_enqueue_scripts() {
-    // Enqueue Google Fonts
+    // Enqueue Google Fonts ( a mettre en  local )
     wp_enqueue_style('motaphoto-google-fonts', 'https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Poppins:wght@400;700&display=swap', false);
 
     // Enqueue normalize.css pour réinitialiser les styles
@@ -28,11 +29,14 @@ function motaphoto_enqueue_scripts() {
     // Enqueue le fichier style.css principal
     wp_enqueue_style('motaphoto-style', get_stylesheet_uri());
 
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css', array(), null);
+
+
     // Enqueue le fichier CSS compilé à partir de SCSS
     wp_enqueue_style('motaphoto-main', get_template_directory_uri() . '/assets/css/main.css');
 
     // Enqueue les fichiers JavaScript
-    wp_enqueue_script('motaphoto-script', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), null, true);
+    wp_enqueue_script('motaphoto-script', get_template_directory_uri() . '/assets/js/main.js');
 }
 add_action('wp_enqueue_scripts', 'motaphoto_enqueue_scripts');
 
@@ -49,13 +53,5 @@ function motaphoto_widgets_init() {
     ));
 }
 add_action('widgets_init', 'motaphoto_widgets_init');
-
-function register_footer_menu() {
-    register_nav_menu('footer-menu', __('Footer Menu'));
-}
-add_action('init', 'register_footer_menu');
-
-
-
 
 ?>

@@ -1,12 +1,12 @@
+        
+        </main>
         <footer class="footer">
             <div class="footer__links">
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'footer-menu',
                     'menu_class' => 'footer__menu',
-                    'container' => false,
-                    'depth' => 1,
-                    'fallback_cb' => false,
+                    'container' => false
                 ));
                 ?>
             </div>
