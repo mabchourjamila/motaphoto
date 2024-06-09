@@ -1,6 +1,65 @@
+/* Utilisation des polices Google Font en local */
+/* SpaceMono */
+@font-face {
+  font-family: "SpaceMono";
+  src: url("../fonts/SpaceMono-Bold.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "SpaceMono";
+  src: url("../fonts/SpaceMono-BoldItalic.ttf") format("truetype");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "SpaceMono";
+  src: url("../fonts/SpaceMono-Italic.ttf") format("truetype");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "SpaceMono";
+  src: url("../fonts/SpaceMono-Regular.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+/* Poppins */
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Italic.ttf") format("truetype");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Light.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-LightItalic.ttf") format("truetype");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #E5E5E5;
+  background-color: white;
   margin: 0;
   padding: 0;
 }
@@ -11,6 +70,7 @@ header {
   height: 80px;
   display: flex;
   align-items: center;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.0705882353);
   /* Navbar */
   /*  Small device */
   /*  Medium device - Bonus */
@@ -200,6 +260,159 @@ header .burger {
 }
 .footer__text {
   margin-left: 70px;
+}
+
+dialog.modale::backdrop {
+  background: repeating-linear-gradient(60deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, rgba(0, 0, 0, 0.3) 1px, rgba(0, 0, 0, 0.3) 20px);
+  backdrop-filter: blur(1px);
+}
+
+@keyframes animate-top {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+.animate {
+  animation-name: animate-top;
+  animation-duration: 0.7s;
+}
+
+.modale {
+  position: fixed;
+  z-index: 1;
+  padding: 0;
+  left: 0;
+  top: 0;
+  border: 0;
+}
+
+.modale__content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modale__header {
+  width: 100%;
+}
+
+.modale__close {
+  color: #020202;
+  float: right;
+  z-index: 1;
+  position: relative;
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.modale__body {
+  padding: 2px 16px;
+}
+
+/* Form container styling */
+.wpcf7-form {
+  max-width: 600px;
+  /* Optional: limit the maximum width of the form container */
+  margin: 0 auto;
+  /* Center the form on the page */
+}
+
+form.wpcf7-form.init {
+  padding-top: 20px;
+  width: 60%;
+}
+
+/* Label and input field styling */
+.wpcf7-form p {
+  margin: 0 0 20px 0;
+}
+
+.wpcf7-form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.wpcf7-form input,
+.wpcf7-form textarea {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Submit button styling */
+.wpcf7-form input[type=submit] {
+  width: 100%;
+  /* Button takes the full width */
+  padding: 15px;
+  background-color: #D8D8D8;
+  /* Button background color */
+  color: #000;
+  /* Optional: button text color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Ensuring the form's response output is styled */
+.wpcf7-response-output {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.photo-details-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 10%;
+}
+
+.photo-info {
+  width: 50%;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-bottom: 1px solid #000; /* Bordure en bas */
+}
+
+.photo-info-content {
+  text-transform: uppercase;
+}
+.photo-info-content h2 {
+  font-family: "Space Mono", monospace;
+  font-size: 66px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 58px;
+  margin-bottom: 10px;
+}
+.photo-info-content p {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 10px 0;
+}
+.photo-info-content p .reference {
+  font-weight: bold;
+}
+
+.photo-content {
+  width: 50%;
 }
 
 /*# sourceMappingURL=main.css.map */

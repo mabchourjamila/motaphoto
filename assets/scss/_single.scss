@@ -1,0 +1,43 @@
+.photo-details-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 10%;
+}
+
+.photo-info {
+    width: 50%;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-bottom: 1px solid #000;  /* Bordure en bas */
+}
+
+.photo-info-content {
+    text-transform: uppercase;
+    h2 {
+        font-family: $font-title;
+        font-size: 66px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 58px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-family: $font-paragraph;
+        font-size: 14px;
+        font-weight: 400;
+        margin: 10px 0;
+
+        .reference {
+            font-weight: bold;
+        }
+    }
+}
+
+.photo-content {
+    width: 50%;
+    .photo-content-inner {
+    }
+}
