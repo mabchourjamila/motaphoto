@@ -29,7 +29,7 @@ if ($categories && !is_wp_error($categories)) {
 ?>
 
 <!-- Affichage du bloc photo -->
-<div class="other-photos">
+<div class="bloc-photo">
     <div class="photo-link">
         <a href="<?php echo esc_url($lien_post); ?>"><?php echo $titre_post; ?></a>
     </div>

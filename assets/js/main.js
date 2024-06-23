@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   console.log('Motaphoto theme JS is working!');
   toggleMenu();
   manageModale();
+  lightbox();
 });
 
 function toggleMenu() {
@@ -66,52 +67,3 @@ function openContactModalWithReference(reference) {
   contactModale.showModal();
 
 }
-
-
-// Flèches de navigation sur single-photographies.php
-document.addEventListener("DOMContentLoaded", function () {
-
-  // Si on se trouve sur la page single-photographies.php seulement
-      let urlActuelle = window.location.href;
-      if (urlActuelle.match(/photographies/)) {
-
-        overlay();
-  }
-  
-  });
-  
-  /////////////////////////////////////////////////////////////////////////
-  
-  // Overlay des photos de photo-bloc.php
-  
-  function overlay() {
-      // Apparition de l'overlay au survol
-      const autresPhotos = document.querySelectorAll('.other-photos');
-  
-      autresPhotos.forEach(element => {
-          const overlay = element.querySelector('.photo-hover');
-          const oeil = element.querySelector('.eye');
-          const divLienPhoto = element.querySelector('.photo-link');
-          const lienPhoto = divLienPhoto.innerHTML;
-  
-  
-          // Début du survol
-          element.addEventListener('mouseenter', function() {
-              overlay.style.display = 'block';
-          });
-          // Fin du survol
-          element.addEventListener('mouseleave', function() {
-              overlay.style.display = 'none';
-          });
-  
-          //////////////////////////
-  
-          // Clic sur l'oeil pour redirection de page
-          oeil.addEventListener('click', function() {
-              // Redirection vers la page de la photo
-              window.location.href = lienPhoto;
-          });
-      });
-  
-      lightbox();
-  }

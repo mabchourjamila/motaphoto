@@ -1,10 +1,12 @@
 function lightbox() {
-    const recuperationPhotos = document.querySelectorAll('.other-photos');
+    const listePhotos = document.querySelectorAll('.bloc-photo');
     const lightbox = document.querySelector('.lightbox');
     const zonePhotoLightBox = lightbox.querySelector('.lightbox-affichage img');
     const zoneReference = lightbox.querySelector('.reference-photo');
     const zoneCategorie = lightbox.querySelector('.categorie-photo');
-    const photos = Array.from(recuperationPhotos);
+    const photos = Array.from(listePhotos);
+	console.log(listePhotos)
+	console.log(photos)
     
     // Initialisation (sans élément actif)
     let indexPhoto = -1;
@@ -33,7 +35,7 @@ function lightbox() {
 	
 	    // Gestion de l'ouverture de la lightbox
 	
-	    recuperationPhotos.forEach((element, index) => {
+	    listePhotos.forEach((element, index) => {
 	        const fullScreen = element.querySelector('.full-screen');
 	        
 	        fullScreen.addEventListener('click', function() {
