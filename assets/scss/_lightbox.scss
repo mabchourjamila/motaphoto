@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: #FFFFFF;
+    color: $background-color;
     animation: lightbox-opacite 0.5s ease-in-out;
 }
 
@@ -59,7 +59,7 @@
 
 .lightbox-fleches {
     width: 100%;
-    font-family: 'SpaceMono', sans-serif;
+    font-family: $font-paragraph;
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
@@ -122,12 +122,12 @@
 }
 
 .reference-photo {
-    font-family: 'Poppins', sans-serif;
+    font-family: $font-paragraph;
     font-weight: 500;
 }
 
 .categorie-photo {
-    font-family: 'SpaceMono', sans-serif;
+    font-family: $font-paragraph;
     font-weight: 400;
 }
 
