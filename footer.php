@@ -1,4 +1,3 @@
-        
         </main>
         <footer class="footer">
             <div class="footer__links">
@@ -11,7 +10,9 @@
                 ?>
             </div>
             <div class="footer__text">Tous droits réservés</div>
+            <?php get_template_part('template-parts/lightbox'); ?>
         </footer>
         <?php wp_footer(); ?>
-    </body>
-</html>
+        </body>
+
+        </html>

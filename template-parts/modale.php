@@ -1,3 +1,5 @@
+<!-- template-parts/modale.php -->
+ 
 <dialog id="modale" class="modale animate">
     <button id="close-modale" class="modale__close">X</button>
     <div class="modale__content">
