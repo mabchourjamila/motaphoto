@@ -42,7 +42,6 @@
 			}
 			?>
 		</div>
-		<a href="<?php echo esc_url(home_url('/')); ?>"><button class="btn-all-photos">Toutes les photos</button></a>
 	</div>
 </div>
 
