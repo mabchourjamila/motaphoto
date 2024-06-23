@@ -1,5 +1,5 @@
 <!-- template-parts/modale.php -->
- 
+ <!-- affichage du modale avec le formulaire de contact -->
 <dialog id="modale" class="modale animate">
     <button id="close-modale" class="modale__close">X</button>
     <div class="modale__content">

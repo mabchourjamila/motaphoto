@@ -24,6 +24,7 @@
         ?>
     </div>
 </div>
+<!-- Affichage du bouton Charger plus -->
 <div class="bouton-accueil">
     <button id="charger-plus" class="voir-plus">Charger plus</button>
 </div>
