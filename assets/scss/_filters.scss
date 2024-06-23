@@ -8,22 +8,22 @@
     margin: 60px 0 30px 0;
     gap: 30px;
 
-    @media (max-width: 850px) {
+    @media (max-width: 700px) {
         flex-direction: column;
         margin: 30px 0 30px 0;
     }
 }
 
 #filtre-tri {
-    padding-left: 300px;
+    padding-left: 15vw;
 
-    @media (max-width: 1152px) {
+    @media (max-width: 700px) {
         padding-left: unset;
     }
 }
 
 .menu-deroulant {
-    width: 260px;
+    width: 20vw;
     height: 45px;
     border: 1px solid #B8BBC2;
     border-radius: 8px;
@@ -36,6 +36,10 @@
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
+
+    @media (max-width: 700px) {
+        width: 70vw;
+    }
 
     &:hover {
         border: 1.3px solid #215AFF
@@ -65,14 +69,14 @@
 }
 
 .menu-ouvert {
-    border: 1.3px solid #215AFF
+    border: 1.3px solid #215AFF;
 }
 
 .menu-options {
     display: none;
     position: absolute;
     flex-direction: column;
-    width: 260px;
+    width: 20vw;
     border: 1px solid #ccc;
     border-top: none;
     border-radius: 0 0 8px 8px;
@@ -85,6 +89,9 @@
     justify-content: flex-start;
     align-items: center;
     z-index: 75;
+    @media (max-width: 700px) {
+        width: 70vw;
+    }
 }
 
 .menu-option {

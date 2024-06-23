@@ -1,28 +1,29 @@
+@charset "UTF-8";
 /* Utilisation des polices Google Font en local */
-/* SpaceMono */
+/* Space Mono */
 @font-face {
-  font-family: "SpaceMono";
+  font-family: "Space Mono";
   src: url("../fonts/SpaceMono-Bold.ttf") format("truetype");
   font-display: swap;
   font-style: normal;
   font-weight: 700;
 }
 @font-face {
-  font-family: "SpaceMono";
+  font-family: "Space Mono";
   src: url("../fonts/SpaceMono-BoldItalic.ttf") format("truetype");
   font-display: swap;
   font-style: italic;
   font-weight: 700;
 }
 @font-face {
-  font-family: "SpaceMono";
+  font-family: "Space Mono";
   src: url("../fonts/SpaceMono-Italic.ttf") format("truetype");
   font-display: swap;
   font-style: italic;
   font-weight: 400;
 }
 @font-face {
-  font-family: "SpaceMono";
+  font-family: "Space Mono";
   src: url("../fonts/SpaceMono-Regular.ttf") format("truetype");
   font-display: swap;
   font-style: normal;
@@ -89,6 +90,7 @@ header .navbar {
   text-transform: uppercase;
   background: white;
   color: #000000;
+  font-weight: 400;
 }
 header .navbar__links {
   display: flex;
@@ -100,6 +102,9 @@ header .navbar__links li {
 header .navbar__links li a {
   color: #000000;
   text-decoration: none;
+}
+header .navbar__links li :hover {
+  font-weight: 700;
 }
 header .burger {
   display: none;
@@ -126,6 +131,7 @@ header .burger {
     transition: all 0.5s ease-in-out;
     justify-content: center;
     align-items: center;
+    z-index: 1;
   }
   header .navbar__links li {
     transform: translateX(101%);
@@ -134,13 +140,14 @@ header .burger {
   header .navbar__links li a {
     display: block;
     font-size: 2.2rem;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 40px;
     color: white;
   }
   header .navbar__links li a :hover {
     padding-left: 2rem;
     letter-spacing: 5px;
+    font-weight: 700;
   }
   header .show-nav ul {
     background-color: #E00000;
@@ -181,7 +188,7 @@ header .burger {
     width: 45px;
     height: 4px;
     border-radius: 3px;
-    background: black;
+    background: #000000;
     transition: all 0.5s ease-in-out;
   }
   header .burger .bar:before,
@@ -191,7 +198,7 @@ header .burger {
     height: 4px;
     position: absolute;
     left: 0;
-    background: black;
+    background: #000000;
     border-radius: 3px;
     transition: all 0.5s ease-in-out;
   }
@@ -218,7 +225,7 @@ header .burger {
     content: "";
     width: 0;
     height: 1px;
-    background: black;
+    background: #000000;
     transition: width 0.4s;
   }
   header li:hover > a::after {
@@ -236,9 +243,16 @@ header .burger {
   font-size: 1rem;
   text-transform: uppercase;
   justify-content: center;
-  box-shadow: 0 -4px 4px 0 rgba(0, 0, 0, 0.15);
+  border-top: 2px solid #000000;
+  /* Ajoute une bordure en haut de 2px noire */
   text-align: center;
   margin-top: 50px;
+}
+@media (max-width: 615px) {
+  .footer {
+    flex-direction: column;
+    padding: 50px 0 50px 0;
+  }
 }
 .footer__links {
   display: flex;
@@ -250,6 +264,12 @@ header .burger {
   padding: 0;
   margin: 0;
 }
+@media (max-width: 615px) {
+  .footer .footer__menu {
+    flex-direction: column;
+    gap: 35px;
+  }
+}
 .footer .footer__menu li {
   display: inline;
 }
@@ -257,16 +277,24 @@ header .burger {
   color: #000000;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-weight: 400;
 }
 .footer .footer__menu li a:hover {
-  color: #FE5858;
+  color: #000000;
+  font-weight: 700;
 }
 .footer__text {
   margin-left: 70px;
 }
+@media (max-width: 615px) {
+  .footer__text {
+    margin-left: unset;
+    margin-top: 35px;
+  }
+}
 
 dialog.modale::backdrop {
-  background: repeating-linear-gradient(60deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, rgba(0, 0, 0, 0.3) 1px, rgba(0, 0, 0, 0.3) 20px);
+  background: rgba(87, 85, 85, 0.253);
   backdrop-filter: blur(1px);
 }
 
@@ -296,7 +324,7 @@ dialog.modale::backdrop {
 
 .modale__content {
   position: relative;
-  background-color: #fefefe;
+  background-color: white;
   margin: auto;
   padding: 0;
   border: 1px solid #888;
@@ -308,7 +336,7 @@ dialog.modale::backdrop {
 }
 
 .modale__close {
-  color: #020202;
+  color: #000000;
   float: right;
   z-index: 1;
   position: relative;
@@ -323,7 +351,7 @@ dialog.modale::backdrop {
 
 /* Form container styling */
 .wpcf7-form {
-  max-width: 600px;
+  max-width: 400px;
   /* Optional: limit the maximum width of the form container */
   margin: 0 auto;
   /* Center the form on the page */
@@ -363,13 +391,20 @@ form.wpcf7-form.init {
   padding: 15px;
   background-color: #D8D8D8;
   /* Button background color */
-  color: #000;
+  color: #000000;
   /* Optional: button text color */
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
   text-align: center;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+}
+.wpcf7-form input[type=submit]:hover {
+  font-weight: 700;
+  background-color: #000000;
+  color: white;
 }
 
 /* Ensuring the form's response output is styled */
@@ -384,13 +419,21 @@ form.wpcf7-form.init {
   justify-content: space-between;
   margin: 40px 10% 0px 10%;
 }
+.photo-details-container .photo-content {
+  width: 50%;
+}
+.photo-details-container .photo-content img {
+  max-width: 100%;
+  height: 100%;
+}
 
 .photo-info {
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border-bottom: 1px solid #000; /* Bordure en bas */
+  border-bottom: 1px solid black;
+  /* Bordure en bas */
 }
 
 .photo-info-content {
@@ -398,28 +441,18 @@ form.wpcf7-form.init {
 }
 .photo-info-content h2 {
   font-family: "Space Mono", monospace;
-  font-size: 66px;
+  font-size: 64px;
   font-style: italic;
   font-weight: 400;
-  line-height: 58px;
-  margin-bottom: 10px;
+  line-height: 60px;
+  margin-bottom: 20px;
 }
 .photo-info-content p {
-  font-family: "Poppins", sans-serif;
+  font-family: "Space Mono", monospace;
   font-size: 14px;
   font-weight: 400;
-  margin: 10px 0;
-}
-.photo-info-content p .reference {
-  font-weight: bold;
-}
-
-.photo-content {
-  width: 50%;
-}
-.photo-content img {
-  max-width: 564px;
-  height: 100%;
+  margin: 20px 0;
+  letter-spacing: 0.1em;
 }
 
 .interaction-banner {
@@ -444,15 +477,19 @@ form.wpcf7-form.init {
   width: 100%;
   padding: 15px;
   background-color: #D8D8D8;
-  color: #000;
+  color: #000000;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
   text-align: center;
+  font-weight: 400;
+  font-family: "Space Mono", monospace;
 }
 .interaction-container .btn-contact:hover {
-  background-color: gray;
+  background-color: #000000;
+  color: white;
+  font-weight: 700;
 }
 
 .navigation-container {
@@ -475,10 +512,10 @@ form.wpcf7-form.init {
 .navigation-arrows .arrow-right .thumbnail-right {
   display: none;
   position: absolute;
-  top: -81px;
+  top: -89px;
   width: 81px;
-  height: 71px;
-  border: 1px solid #ddd;
+  height: 80px;
+  border: 1px solid #E5E5E5;
   background-color: white;
   z-index: 10;
 }
@@ -502,15 +539,10 @@ form.wpcf7-form.init {
 }
 
 .related-photos {
-  padding: 20px;
-  background-color: #f9f9f9;
+  padding: 30px 0px;
   position: relative;
-}
-
-.related-photos h3 {
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px;
+  margin: 0px 10%;
+  background-color: white;
 }
 
 .related-photos-container {
@@ -523,9 +555,24 @@ form.wpcf7-form.init {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 1vw;
   max-width: 100%;
   position: relative;
+}
+
+.related-photos h3 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-family: "Space Mono", monospace;
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 400;
+}
+
+.related-photos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .related-photos-grid .photo-bloc {
@@ -540,31 +587,17 @@ form.wpcf7-form.init {
   display: block;
 }
 
-.related-photos {
-  padding: 20px;
-  position: relative;
-}
-
-.related-photos-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.related-photos-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  max-width: 100%;
-  position: relative;
-}
-
 .bloc-photo {
-  width: 564px;
+  width: 39vw;
   height: 495px;
   position: relative;
   overflow: hidden;
+}
+@media (max-width: 615px) {
+  .bloc-photo {
+    width: 85vw;
+    height: 61vh;
+  }
 }
 .bloc-photo .photo-link,
 .bloc-photo .photo-content,
@@ -580,7 +613,7 @@ form.wpcf7-form.init {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: white;
   display: none;
 }
 .bloc-photo .photo-content img {
@@ -594,7 +627,7 @@ form.wpcf7-form.init {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
-  color: #ffffff;
+  color: white;
   flex-direction: column;
 }
 .bloc-photo .photo-hover .hover-content {
@@ -661,13 +694,24 @@ form.wpcf7-form.init {
   margin: 60px 0 30px 0;
   gap: 30px;
 }
+@media (max-width: 700px) {
+  .filtres {
+    flex-direction: column;
+    margin: 30px 0 30px 0;
+  }
+}
 
 #filtre-tri {
-  padding-left: 300px;
+  padding-left: 15vw;
+}
+@media (max-width: 700px) {
+  #filtre-tri {
+    padding-left: unset;
+  }
 }
 
 .menu-deroulant {
-  width: 260px;
+  width: 20vw;
   height: 45px;
   border: 1px solid #B8BBC2;
   border-radius: 8px;
@@ -679,6 +723,15 @@ form.wpcf7-form.init {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-transform: uppercase;
+}
+@media (max-width: 700px) {
+  .menu-deroulant {
+    width: 70vw;
+  }
+}
+.menu-deroulant:hover {
+  border: 1.3px solid #215AFF;
 }
 
 .menu-titre {
@@ -711,11 +764,11 @@ form.wpcf7-form.init {
   display: none;
   position: absolute;
   flex-direction: column;
-  width: 260px;
+  width: 20vw;
   border: 1px solid #ccc;
   border-top: none;
   border-radius: 0 0 8px 8px;
-  background-color: #fff;
+  background-color: white;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -724,6 +777,11 @@ form.wpcf7-form.init {
   justify-content: flex-start;
   align-items: center;
   z-index: 75;
+}
+@media (max-width: 700px) {
+  .menu-options {
+    width: 70vw;
+  }
 }
 
 .menu-option {
@@ -758,12 +816,12 @@ form.wpcf7-form.init {
 
 .menu-option.selectionne {
   background-color: #E00000;
-  color: #fff;
+  color: white;
 }
 
 .menu-option.dernier-selectionne {
   background-color: #E00000;
-  color: #fff;
+  color: white;
   border-radius: 0 0 8px 8px;
 }
 
@@ -773,17 +831,22 @@ main .hero {
 }
 main .hero h1 {
   font-family: "Space Mono", monospace;
-  font-size: 96px;
+  font-size: 7vw;
+  /* Utilisation de 10% de la largeur de la fenêtre pour la taille de la police */
   font-style: italic;
-  font-weight: 700;
-  line-height: 142.18px;
-  text-align: left;
-  color: #fff;
+  font-weight: 900;
+  line-height: 1.5;
+  /* Ajustement du line-height pour qu'il soit proportionnel à la taille de la police */
+  text-align: center;
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
+  -webkit-text-stroke: 2px white;
+  color: transparent;
+  text-transform: uppercase;
 }
 main .hero .photo-random {
   width: 100%;
@@ -795,6 +858,11 @@ main .hero .photo-random img {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+@media (max-width: 615px) {
+  main .hero .photo-random img {
+    height: 80vh;
+  }
 }
 main .bloc-les-photos {
   display: flex;
@@ -822,19 +890,22 @@ main .bloc-les-photos .bouton-accueil {
   margin-top: 40px;
 }
 main .bloc-les-photos .bouton-accueil .voir-plus {
+  font-family: "Space Mono", monospace;
   width: 300px;
   padding: 15px;
   background-color: #D8D8D8;
-  color: #000;
+  color: #000000;
   border: none;
-  border-radius: 4px;
+  border-radius: 2px;
   cursor: pointer;
   font-size: 16px;
   text-align: center;
   transition: background-color 0.3s;
 }
 main .bloc-les-photos .bouton-accueil .voir-plus:hover {
-  background-color: #b4a8a8;
+  color: white;
+  background-color: #000000;
+  font-weight: 700;
 }
 
 /*********** Lightbox ***********/
@@ -850,7 +921,7 @@ main .bloc-les-photos .bouton-accueil .voir-plus:hover {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: #FFFFFF;
+  color: white;
   animation: lightbox-opacite 0.5s ease-in-out;
 }
 
@@ -897,7 +968,7 @@ main .bloc-les-photos .bouton-accueil .voir-plus:hover {
 
 .lightbox-fleches {
   width: 100%;
-  font-family: "SpaceMono", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
@@ -965,7 +1036,7 @@ main .bloc-les-photos .bouton-accueil .voir-plus:hover {
 }
 
 .categorie-photo {
-  font-family: "SpaceMono", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 

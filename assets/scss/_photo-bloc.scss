@@ -1,28 +1,13 @@
-.related-photos {
-    padding: 20px;
-    position: relative;
-}
-
-.related-photos-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.related-photos-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    max-width: 100%;
-    position: relative;
-}
-
 .bloc-photo {
-    width: 564px;
+    width: 39vw;
     height: 495px;
     position: relative;
     overflow: hidden;
+
+    @media (max-width: 615px) {
+        width: 85vw;
+        height: 61vh;
+    }
 
     .photo-link,
     .photo-content,
@@ -39,7 +24,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #fff;
+        color: $background-color;
         display: none;
     }
 
@@ -57,7 +42,7 @@
         justify-content: center;
         align-items: center;
         background-color: rgba(0, 0, 0, 0.7);
-        color: #ffffff;
+        color: $background-color;
         flex-direction: column;
 
         .hover-content {
