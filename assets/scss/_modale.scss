@@ -1,9 +1,5 @@
 dialog.modale::backdrop {
-    background: repeating-linear-gradient(60deg,
-            rgba(0, 0, 0, 0.2),
-            rgba(0, 0, 0, 0.2) 1px,
-            rgba(0, 0, 0, 0.3) 1px,
-            rgba(0, 0, 0, 0.3) 20px);
+    background: rgba(87, 85, 85, 0.253);
     backdrop-filter: blur(1px);
 }
 
@@ -35,7 +31,7 @@ dialog.modale::backdrop {
 
 .modale__content {
     position: relative;
-    background-color: #fefefe;
+    background-color: $background-color;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
@@ -48,7 +44,7 @@ dialog.modale::backdrop {
 }
 
 .modale__close {
-    color: #020202;
+    color: $black;
     float: right;
     z-index: 1;
     position: relative;
@@ -63,7 +59,7 @@ dialog.modale::backdrop {
 
 /* Form container styling */
 .wpcf7-form {
-    max-width: 600px;
+    max-width: 400px;
     /* Optional: limit the maximum width of the form container */
     margin: 0 auto;
     /* Center the form on the page */
@@ -101,15 +97,22 @@ form.wpcf7-form.init {
     width: 100%;
     /* Button takes the full width */
     padding: 15px;
-    background-color: #D8D8D8;
+    background-color: $medium-gray;
     /* Button background color */
-    color: #000;
+    color: $black;
     /* Optional: button text color */
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
     text-align: center;
+    font-family: $font-title;
+    font-weight: 400;
+    &:hover{
+        font-weight: 700;
+        background-color: $black;
+        color: $background-color;
+    }
 }
 
 /* Ensuring the form's response output is styled */
