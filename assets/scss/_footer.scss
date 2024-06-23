@@ -3,15 +3,20 @@
     display: flex;
     align-items: center;
     padding: 20px;
-    background-color: white;
-    color: #000000;
+    background-color: $background-color;
+    color: $black;
     font-size: 1rem;
     text-transform: uppercase;
     justify-content: center;
-    box-shadow: 0 -4px 4px 0 rgb(0 0 0 / 15%);
+    border-top: 2px solid $black;
+    /* Ajoute une bordure en haut de 2px noire */
     text-align: center;
     margin-top: 50px;
 
+    @media (max-width: 615px) {
+        flex-direction: column;
+        padding: 50px 0 50px 0;
+    }
 
     &__links {
         display: flex;
@@ -24,6 +29,11 @@
         padding: 0;
         margin: 0;
 
+        @media (max-width: 615px) {
+            flex-direction: column;
+            gap: 35px;
+        }
+
         li {
             display: inline;
 
@@ -31,9 +41,11 @@
                 color: $black;
                 text-decoration: none;
                 transition: color 0.3s ease;
+                font-weight: 400;
 
                 &:hover {
-                    color: $secondary-red;
+                    color: $black;
+                    font-weight: 700;
                 }
             }
         }
@@ -41,5 +53,10 @@
 
     &__text {
         margin-left: 70px;
+
+        @media (max-width: 615px) {
+            margin-left: unset;
+            margin-top: 35px;
+        }
     }
 }
