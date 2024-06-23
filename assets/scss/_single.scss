@@ -1,12 +1,12 @@
 .photo-details-container {
     display: flex;
+    gap: 20px;
     justify-content: space-between;
-    margin: 40px 10%;
+    margin: 40px 10% 0px 10%;
 }
 
 .photo-info {
     width: 50%;
-    margin: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -38,6 +38,8 @@
 
 .photo-content {
     width: 50%;
-    .photo-content-inner {
+    img{
+        max-width: 564px;
+        height: 100%;
     }
 }

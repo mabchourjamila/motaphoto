@@ -10,6 +10,11 @@
 @import 'footer';
 // Importer le CSS du modale
 @import 'modale';
-
 // Importer le CSS de la single page
 @import 'single';
+// Importer le CSS du bandeau de la single page
+@import 'bandeau';
+// Importer le CSS de la section related photo (Vous aimerez aussi) de la single page
+@import 'related-photos';
+// Importer le CSS du bloc photo
+@import 'photo-bloc';

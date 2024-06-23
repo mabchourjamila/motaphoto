@@ -20,7 +20,6 @@ if ($custom_query->have_posts()) {
 
         $reference = get_field('reference');
         $type = get_field('type');
-        $annee = get_field('annee');
         $categories = wp_get_post_terms(get_the_ID(), 'categoriesphotos');
         $formats = wp_get_post_terms(get_the_ID(), 'formats');
 ?>
@@ -43,19 +42,23 @@ if ($custom_query->have_posts()) {
                         ?>
                     </p>
                     <p>TYPE : <?php echo $type; ?></p>
-                    <p>ANNÉE : <?php  echo $annee; ?></p>
+                    <p>ANNÉE : <?php echo the_date('Y'); ?></p>
                 </div>
             </div>
             <!-- Zone droite - La photo -->
             <div class="photo-content">
                 <div class="photo-content-inner">
-                    <?php the_content(); ?>
+                    <?php the_post_thumbnail('medium_large'); ?>
                 </div>
             </div>
         </div>
 
 <?php
+
+        get_template_part('template-parts/bandeau');
     }
     wp_reset_postdata();
 }
+
+get_template_part('template-parts/related-photos');
 ?>
