@@ -559,6 +559,11 @@ form.wpcf7-form.init {
   max-width: 100%;
   position: relative;
 }
+@media (max-width: 700px) {
+  .related-photos-grid {
+    gap: 3vw;
+  }
+}
 
 .related-photos h3 {
   font-size: 24px;
@@ -589,14 +594,14 @@ form.wpcf7-form.init {
 
 .bloc-photo {
   width: 39vw;
-  height: 495px;
+  height: 40vw;
   position: relative;
   overflow: hidden;
 }
-@media (max-width: 615px) {
+@media (max-width: 700px) {
   .bloc-photo {
     width: 85vw;
-    height: 61vh;
+    height: 75vh;
   }
 }
 .bloc-photo .photo-link,
@@ -884,7 +889,12 @@ main .bloc-les-photos .affichage-des-photos .zone-les-photos {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 1.5vw;
+}
+@media (max-width: 700px) {
+  main .bloc-les-photos .affichage-des-photos .zone-les-photos {
+    gap: 3vw;
+  }
 }
 main .bloc-les-photos .bouton-accueil {
   margin-top: 40px;

@@ -1,12 +1,12 @@
 .bloc-photo {
     width: 39vw;
-    height: 495px;
+    height: 40vw;
     position: relative;
     overflow: hidden;
 
-    @media (max-width: 615px) {
+    @media (max-width: 700px) {
         width: 85vw;
-        height: 61vh;
+        height: 75vh;
     }
 
     .photo-link,

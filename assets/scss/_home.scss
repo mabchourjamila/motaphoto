@@ -64,7 +64,10 @@ main {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 20px;
+                gap: 1.5vw;
+                @media (max-width: 700px) {
+                    gap: 3vw;
+                }
             }
         }
 
