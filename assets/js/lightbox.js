@@ -5,8 +5,6 @@ function lightbox() {
     const zoneReference = lightbox.querySelector('.reference-photo');
     const zoneCategorie = lightbox.querySelector('.categorie-photo');
     const photos = Array.from(listePhotos);
-	console.log(listePhotos)
-	console.log(photos)
     
     // Initialisation (sans élément actif)
     let indexPhoto = -1;

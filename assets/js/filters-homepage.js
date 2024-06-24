@@ -149,9 +149,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 zoneLesPhotos.innerHTML = response;
                 // Si le nouveau contenu dispose de moins de 8 photos, alors le bouton charger plus disparaît
                 surveillerChargerPlus();
-                // L'overlay de chaque photo se charge à chaque requête
-                // à faire
-                //overlay();
             },
             error: function(error) {
                 console.log(error);

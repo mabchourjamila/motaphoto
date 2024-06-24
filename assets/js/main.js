@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   lightbox();
 });
 
+// cette fonction permet d'afficher le menu en cliquant sur le bouton du menu burger affiché en responsive
 function toggleMenu() {
   const navbar = document.querySelector('.navbar');
   const burger = document.querySelector('.burger');
@@ -24,6 +25,7 @@ function toggleMenu() {
 
 }
 
+// cette fonction est utilisée pour afficher la modale du formulaire de contact via le click sur le btn contact du menu de nivagation
 function manageModale() {
   const contactButtonOpen = document.getElementById('menu-item-16');
   const contactModale = document.getElementById('modale');
@@ -31,6 +33,11 @@ function manageModale() {
 
   // Ajouter l'event de click sur le bouton contact du menu
   contactButtonOpen.addEventListener('click', (event) => {
+
+    // vider le champs Ref. Photos avant d'afficher la modale du formulaire de contact 
+    const refPhotoInput = document.querySelector('input[name="your-photo"]');
+    refPhotoInput.value = "";
+    // afficher la modale du fomrulaire de contact
     contactModale.showModal();
   });
   // Ajouter l'event pour fermer le modale
@@ -52,6 +59,7 @@ function manageModale() {
   });
 }
 
+// cette fonction est utilisée pour afficher la modale du formaulaire de contact avec la réf. photos pré-remplit
 function openContactModalWithReference(reference) {
   // Sélection de l'élément input par son attribut name
   const refPhotoInput = document.querySelector('input[name="your-photo"]');
