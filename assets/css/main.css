@@ -417,10 +417,21 @@ form.wpcf7-form.init {
   display: flex;
   gap: 20px;
   justify-content: space-between;
-  margin: 40px 10% 0px 10%;
+  padding: 40px 10% 0px 10%;
+}
+@media (max-width: 767px) {
+  .photo-details-container {
+    flex-direction: column-reverse;
+    border-bottom: 1px solid black;
+  }
 }
 .photo-details-container .photo-content {
   width: 50%;
+}
+@media (max-width: 767px) {
+  .photo-details-container .photo-content {
+    width: 100%;
+  }
 }
 .photo-details-container .photo-content img {
   max-width: 100%;
@@ -432,8 +443,15 @@ form.wpcf7-form.init {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border-bottom: 1px solid black;
+  padding-bottom: 15px;
   /* Bordure en bas */
+  border-bottom: 1px solid black;
+}
+@media (max-width: 767px) {
+  .photo-info {
+    width: 100%;
+    border-bottom: unset;
+  }
 }
 
 .photo-info-content {
@@ -463,15 +481,33 @@ form.wpcf7-form.init {
   margin: 0px 10%;
   border-bottom: 1px solid #000;
 }
+@media (max-width: 767px) {
+  .interaction-banner {
+    padding: 15px 10%;
+    margin: unset;
+  }
+}
 
 .interaction-container {
   display: flex;
   align-items: center;
   width: 50%;
 }
+@media (max-width: 767px) {
+  .interaction-container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .interaction-container p {
   margin-right: 10px;
   width: 100%;
+}
+@media (max-width: 767px) {
+  .interaction-container p {
+    margin-right: unset;
+  }
 }
 .interaction-container .btn-contact {
   width: 100%;
@@ -495,6 +531,11 @@ form.wpcf7-form.init {
 .navigation-container {
   display: flex;
   align-items: flex-end;
+}
+@media (max-width: 767px) {
+  .navigation-container {
+    display: none;
+  }
 }
 
 .navigation-arrows {
