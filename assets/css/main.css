@@ -746,17 +746,7 @@ form.wpcf7-form.init {
     margin: 30px 0 30px 0;
   }
 }
-
-#filtre-tri {
-  padding-left: 15vw;
-}
-@media (max-width: 700px) {
-  #filtre-tri {
-    padding-left: unset;
-  }
-}
-
-.menu-deroulant {
+.filtres .bloc-filtre #categorie-titre.menu-deroulant, .filtres .bloc-filtre #format-titre.menu-deroulant, .filtres .bloc-filtre #tri-titre.menu-deroulant {
   width: 20vw;
   height: 45px;
   border: 1px solid #B8BBC2;
@@ -770,43 +760,38 @@ form.wpcf7-form.init {
   justify-content: space-between;
   align-items: center;
   text-transform: uppercase;
+  cursor: pointer;
 }
 @media (max-width: 700px) {
-  .menu-deroulant {
+  .filtres .bloc-filtre #categorie-titre.menu-deroulant, .filtres .bloc-filtre #format-titre.menu-deroulant, .filtres .bloc-filtre #tri-titre.menu-deroulant {
     width: 70vw;
   }
 }
-.menu-deroulant:hover {
+.filtres .bloc-filtre #categorie-titre.menu-deroulant:hover, .filtres .bloc-filtre #format-titre.menu-deroulant:hover, .filtres .bloc-filtre #tri-titre.menu-deroulant:hover {
   border: 1.3px solid #215AFF;
 }
-
-.menu-titre {
+.filtres .bloc-filtre #categorie-titre.menu-deroulant .menu-titre, .filtres .bloc-filtre #format-titre.menu-deroulant .menu-titre, .filtres .bloc-filtre #tri-titre.menu-deroulant .menu-titre {
   padding-left: 10px;
 }
-
-.cache {
+.filtres .bloc-filtre #categorie-titre.menu-deroulant .menu-titre.visible, .filtres .bloc-filtre #format-titre.menu-deroulant .menu-titre.visible, .filtres .bloc-filtre #tri-titre.menu-deroulant .menu-titre.visible {
+  display: block;
+}
+.filtres .bloc-filtre #categorie-titre.menu-deroulant .menu-titre.cache, .filtres .bloc-filtre #format-titre.menu-deroulant .menu-titre.cache, .filtres .bloc-filtre #tri-titre.menu-deroulant .menu-titre.cache {
   display: none;
 }
-
-.menu-fleche {
+.filtres .bloc-filtre #categorie-titre.menu-deroulant .menu-fleche, .filtres .bloc-filtre #format-titre.menu-deroulant .menu-fleche, .filtres .bloc-filtre #tri-titre.menu-deroulant .menu-fleche {
   padding-right: 10px;
   cursor: pointer;
 }
-
-.apparition {
-  animation: fade-in-top-filtres 0.5s ease-in-out;
-}
-
-.rotation {
+.filtres .bloc-filtre #categorie-titre.menu-deroulant .menu-fleche.rotation, .filtres .bloc-filtre #format-titre.menu-deroulant .menu-fleche.rotation, .filtres .bloc-filtre #tri-titre.menu-deroulant .menu-fleche.rotation {
   transform: rotate(180deg) translateX(10px);
   transition: transform 0.5s ease-in-out;
 }
-
-.menu-ouvert {
+.filtres .bloc-filtre #categorie-titre.menu-deroulant.menu-ouvert, .filtres .bloc-filtre #format-titre.menu-deroulant.menu-ouvert, .filtres .bloc-filtre #tri-titre.menu-deroulant.menu-ouvert {
   border: 1.3px solid #215AFF;
+  border-radius: 8px 8px 0 0;
 }
-
-.menu-options {
+.filtres .bloc-filtre .menu-options {
   display: none;
   position: absolute;
   flex-direction: column;
@@ -825,12 +810,18 @@ form.wpcf7-form.init {
   z-index: 75;
 }
 @media (max-width: 700px) {
-  .menu-options {
+  .filtres .bloc-filtre .menu-options {
     width: 70vw;
   }
 }
-
-.menu-option {
+.filtres .bloc-filtre .menu-options.apparition {
+  animation: fade-in-top-filtres 0.5s ease-in-out;
+}
+.filtres .bloc-filtre .menu-options .vide {
+  height: 45px;
+  cursor: pointer;
+}
+.filtres .bloc-filtre .menu-options .menu-option {
   height: 45px;
   padding-left: 10px;
   display: flex;
@@ -838,37 +829,34 @@ form.wpcf7-form.init {
   align-items: center;
   cursor: pointer;
 }
-
-.vide {
-  height: 45px;
-  cursor: pointer;
-}
-
-.dernier {
-  border-radius: 0 0 8px 8px;
-}
-
-.menu-option:hover {
+.filtres .bloc-filtre .menu-options .menu-option:hover {
   background-color: #FFD6D6;
 }
-
-.menu-option:active {
+.filtres .bloc-filtre .menu-options .menu-option:active {
   background-color: #FE5858;
 }
-
-.menu-option:focus {
+.filtres .bloc-filtre .menu-options .menu-option:focus {
   background-color: #E00000;
 }
-
-.menu-option.selectionne {
+.filtres .bloc-filtre .menu-options .menu-option.selectionne {
   background-color: #E00000;
   color: white;
 }
-
-.menu-option.dernier-selectionne {
+.filtres .bloc-filtre .menu-options .menu-option.dernier {
+  border-radius: 0 0 8px 8px;
+}
+.filtres .bloc-filtre .menu-options .menu-option.dernier.dernier-selectionne {
   background-color: #E00000;
   color: white;
   border-radius: 0 0 8px 8px;
+}
+.filtres #filtre-tri {
+  padding-left: 15vw;
+}
+@media (max-width: 700px) {
+  .filtres #filtre-tri {
+    padding-left: unset;
+  }
 }
 
 main .hero {

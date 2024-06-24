@@ -12,125 +12,135 @@
         flex-direction: column;
         margin: 30px 0 30px 0;
     }
-}
 
-#filtre-tri {
-    padding-left: 15vw;
+    .bloc-filtre {
+        #categorie-titre, #format-titre, #tri-titre {
+            &.menu-deroulant {
+                width: 20vw;
+                height: 45px;
+                border: 1px solid #B8BBC2;
+                border-radius: 8px;
+                font-family: $font-paragraph;
+                font-weight: 500;
+                font-style: normal;
+                font-size: 12px;
+                line-height: 18px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                text-transform: uppercase;
+                cursor: pointer;
 
-    @media (max-width: 700px) {
-        padding-left: unset;
+                @media (max-width: 700px) {
+                    width: 70vw;
+                }
+
+                &:hover {
+                    border: 1.3px solid $blue;
+                }
+
+                .menu-titre {
+                    padding-left: 10px;
+
+                    &.visible {
+                        display: block;
+                    }
+
+                    &.cache {
+                        display: none;
+                    }
+                }
+
+                .menu-fleche {
+                    padding-right: 10px;
+                    cursor: pointer;
+
+                    &.rotation {
+                        transform: rotate(180deg) translateX(10px);
+                        transition: transform 0.5s ease-in-out;
+                    }
+                }
+
+                &.menu-ouvert {
+                    border: 1.3px solid $blue;
+                    border-radius: 8px 8px 0 0;
+                }
+            }
+        }
+
+        .menu-options {
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            width: 20vw;
+            border: 1px solid #ccc;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            background-color: $background-color;
+            font-family: $font-paragraph;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 12px;
+            line-height: 18px;
+            justify-content: flex-start;
+            align-items: center;
+            z-index: 75;
+            @media (max-width: 700px) {
+                width: 70vw;
+            }
+
+            &.apparition {
+                animation: fade-in-top-filtres 0.5s ease-in-out;
+            }
+
+            .vide {
+                height: 45px;
+                cursor: pointer;
+            }
+
+            .menu-option {
+                height: 45px;
+                padding-left: 10px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $tertiary-red;
+                }
+
+                &:active {
+                    background-color: $secondary-red;
+                }
+
+                &:focus {
+                    background-color: $red;
+                }
+
+                &.selectionne {
+                    background-color: $red;
+                    color: $background-color;
+                }
+
+                &.dernier {
+                    border-radius: 0 0 8px 8px;
+
+                    &.dernier-selectionne {
+                        background-color: $red;
+                        color: $background-color;
+                        border-radius: 0 0 8px 8px;
+                    }
+                }
+            }
+        }
     }
-}
 
-.menu-deroulant {
-    width: 20vw;
-    height: 45px;
-    border: 1px solid #B8BBC2;
-    border-radius: 8px;
-    font-family: $font-paragraph;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 12px;
-    line-height: 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-transform: uppercase;
+    #filtre-tri {
+        padding-left: 15vw;
 
-    @media (max-width: 700px) {
-        width: 70vw;
+        @media (max-width: 700px) {
+            padding-left: unset;
+        }
     }
-
-    &:hover {
-        border: 1.3px solid #215AFF
-    }
-}
-
-.menu-titre {
-    padding-left: 10px;
-}
-
-.cache {
-    display: none;
-}
-
-.menu-fleche {
-    padding-right: 10px;
-    cursor: pointer;
-}
-
-.apparition {
-    animation: fade-in-top-filtres 0.5s ease-in-out;
-}
-
-.rotation {
-    transform: rotate(180deg) translateX(10px);
-    transition: transform 0.5s ease-in-out;
-}
-
-.menu-ouvert {
-    border: 1.3px solid #215AFF;
-}
-
-.menu-options {
-    display: none;
-    position: absolute;
-    flex-direction: column;
-    width: 20vw;
-    border: 1px solid #ccc;
-    border-top: none;
-    border-radius: 0 0 8px 8px;
-    background-color: $background-color;
-    font-family: $font-paragraph;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 12px;
-    line-height: 18px;
-    justify-content: flex-start;
-    align-items: center;
-    z-index: 75;
-    @media (max-width: 700px) {
-        width: 70vw;
-    }
-}
-
-.menu-option {
-    height: 45px;
-    padding-left: 10px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    cursor: pointer;
-}
-
-.vide {
-    height: 45px;
-    cursor: pointer;
-}
-
-.dernier {
-    border-radius: 0 0 8px 8px;
-}
-
-.menu-option:hover {
-    background-color: $tertiary-red;
-}
-
-.menu-option:active {
-    background-color: $secondary-red;
-}
-
-.menu-option:focus {
-    background-color: $red;
-}
-
-.menu-option.selectionne {
-    background-color: $red;
-    color: $background-color;
-}
-
-.menu-option.dernier-selectionne {
-    background-color: $red;
-    color: $background-color;
-    border-radius: 0 0 8px 8px;
 }
