@@ -6,12 +6,11 @@ dialog.modale::backdrop {
 @keyframes animate-top {
     from {
         top: -300px;
-        opacity: 0
+        opacity: 0;
     }
-
     to {
         top: 0;
-        opacity: 1
+        opacity: 1;
     }
 }
 
@@ -27,92 +26,84 @@ dialog.modale::backdrop {
     left: 0;
     top: 0;
     border: 0;
-}
 
-.modale__content {
-    position: relative;
-    background-color: $background-color;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    &__content {
+        position: relative;
+        background-color: $background-color;
+        margin: auto;
+        padding: 0;
+        border: 1px solid #888;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
 
-}
+    &__header {
+        width: 100%;
+    }
 
-.modale__header {
-    width: 100%;
-}
+    &__close {
+        color: $black;
+        float: right;
+        z-index: 1;
+        position: relative;
+        font-size: 20px;
+        font-weight: 300;
+        cursor: pointer;
+    }
 
-.modale__close {
-    color: $black;
-    float: right;
-    z-index: 1;
-    position: relative;
-    font-size: 20px;
-    font-weight: 300;
-    cursor: pointer;
-}
-
-.modale__body {
-    padding: 2px 16px;
+    &__body {
+        padding: 2px 16px;
+    }
 }
 
 /* Form container styling */
 .wpcf7-form {
-    max-width: 400px;
-    /* Optional: limit the maximum width of the form container */
-    margin: 0 auto;
-    /* Center the form on the page */
-}
+    max-width: 400px; /* Optional: limit the maximum width of the form container */
+    margin: 0 auto; /* Center the form on the page */
 
-form.wpcf7-form.init {
-    padding-top: 20px;
-    width: 60%;
-}
+    &.init {
+        padding-top: 20px;
+        width: 60%;
+    }
 
-/* Label and input field styling */
-.wpcf7-form p {
-    margin: 0 0 20px 0;
-}
+    p {
+        margin: 0 0 20px 0;
+    }
 
-.wpcf7-form label {
-    display: block;
-    font-weight: 500;
-    margin-bottom: 5px;
-}
+    label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
 
-.wpcf7-form input,
-.wpcf7-form textarea {
-    margin-top: 10px;
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
+    input,
+    textarea {
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
 
-/* Submit button styling */
-.wpcf7-form input[type="submit"] {
-    width: 100%;
-    /* Button takes the full width */
-    padding: 15px;
-    background-color: $medium-gray;
-    /* Button background color */
-    color: $black;
-    /* Optional: button text color */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: center;
-    font-family: $font-title;
-    font-weight: 400;
+    input[type="submit"] {
+        width: 100%; /* Button takes the full width */
+        padding: 15px;
+        background-color: $medium-gray; /* Button background color */
+        color: $black; /* Optional: button text color */
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        text-align: center;
+        font-family: $font-title;
+        font-weight: 400;
 
-    &:hover {
-        font-weight: 700;
-        background-color: $black;
-        color: $background-color;
+        &:hover {
+            font-weight: 700;
+            background-color: $black;
+            color: $background-color;
+        }
     }
 }
 

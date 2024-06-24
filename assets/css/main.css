@@ -112,7 +112,7 @@ header .burger {
 }
 @media screen and (max-width: 767.98px) {
   header {
-    /* Toggle menu: gestion de l'affichage du burger et transformation des 3 traits en croix  bien hdhdhhfhfhfhfjfiirbgubeugbg*/
+    /* Toggle menu: gestion de l'affichage du burger et transformation des 3 traits en croix */
   }
   header .navbar {
     justify-content: space-between;
@@ -323,7 +323,6 @@ dialog.modale::backdrop {
   top: 0;
   border: 0;
 }
-
 .modale__content {
   position: relative;
   background-color: white;
@@ -332,11 +331,9 @@ dialog.modale::backdrop {
   border: 1px solid #888;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 .modale__header {
   width: 100%;
 }
-
 .modale__close {
   color: #000000;
   float: right;
@@ -346,35 +343,27 @@ dialog.modale::backdrop {
   font-weight: 300;
   cursor: pointer;
 }
-
 .modale__body {
   padding: 2px 16px;
 }
 
 /* Form container styling */
 .wpcf7-form {
-  max-width: 400px;
-  /* Optional: limit the maximum width of the form container */
-  margin: 0 auto;
-  /* Center the form on the page */
+  max-width: 400px; /* Optional: limit the maximum width of the form container */
+  margin: 0 auto; /* Center the form on the page */
 }
-
-form.wpcf7-form.init {
+.wpcf7-form.init {
   padding-top: 20px;
   width: 60%;
 }
-
-/* Label and input field styling */
 .wpcf7-form p {
   margin: 0 0 20px 0;
 }
-
 .wpcf7-form label {
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
 }
-
 .wpcf7-form input,
 .wpcf7-form textarea {
   margin-top: 10px;
@@ -385,16 +374,11 @@ form.wpcf7-form.init {
   border-radius: 4px;
   font-size: 16px;
 }
-
-/* Submit button styling */
 .wpcf7-form input[type=submit] {
-  width: 100%;
-  /* Button takes the full width */
+  width: 100%; /* Button takes the full width */
   padding: 15px;
-  background-color: #D8D8D8;
-  /* Button background color */
-  color: #000000;
-  /* Optional: button text color */
+  background-color: #D8D8D8; /* Button background color */
+  color: #000000; /* Optional: button text color */
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -983,13 +967,11 @@ main .bloc-les-photos .bouton-accueil .voir-plus:hover {
   color: white;
   animation: lightbox-opacite 0.5s ease-in-out;
 }
-
-.lightbox-fermeture {
+.lightbox .lightbox-fermeture {
   width: 100%;
   height: 20px;
 }
-
-.lightbox-fermeture i {
+.lightbox .lightbox-fermeture i {
   position: fixed;
   top: 30px;
   right: 30px;
@@ -997,13 +979,11 @@ main .bloc-les-photos .bouton-accueil .voir-plus:hover {
   transform: scale(2);
   opacity: 0.8;
 }
-
-.lightbox-fermeture i:hover {
+.lightbox .lightbox-fermeture i:hover {
   opacity: 1;
   transition: opacity 0.3s;
 }
-
-.lightbox-affichage {
+.lightbox .lightbox-affichage {
   width: 100%;
   max-height: 100%;
   display: flex;
@@ -1011,21 +991,18 @@ main .bloc-les-photos .bouton-accueil .voir-plus:hover {
   justify-content: center;
   overflow: scroll;
 }
-
-.lightbox-affichage::-webkit-scrollbar {
+.lightbox .lightbox-affichage::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
-
-.lightbox-affichage img {
+.lightbox .lightbox-affichage img {
   animation: lightbox-opacite 0.8s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
   object-fit: cover;
 }
-
-.lightbox-fleches {
+.lightbox .lightbox-fleches {
   width: 100%;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -1036,47 +1013,39 @@ main .bloc-les-photos .bouton-accueil .voir-plus:hover {
   justify-content: space-between;
   position: fixed;
 }
-
-.precedente, .suivante {
+.lightbox .lightbox-fleches .precedente, .lightbox .lightbox-fleches .suivante {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
   z-index: 667;
 }
-
-.suivante {
-  padding-right: 20px;
-}
-
-.precedente {
-  padding-left: 20px;
-}
-
-.lightbox-precedente, .lightbox-suivante {
-  cursor: pointer;
-  opacity: 0.8;
-}
-
-.lightbox-precedente:hover, .lightbox-suivante:hover {
-  font-weight: 800;
-  transition: 0.3s;
-  opacity: 1;
-}
-
-.precedente i, .suivante i {
+.lightbox .lightbox-fleches .precedente i, .lightbox .lightbox-fleches .suivante i {
   transform: scale(1.7);
   cursor: pointer;
   opacity: 0.8;
 }
-
-.precedente i:hover, .suivante i:hover {
+.lightbox .lightbox-fleches .precedente i:hover, .lightbox .lightbox-fleches .suivante i:hover {
   transform: scale(2);
   transition: 0.3s;
   opacity: 1;
 }
-
-.informations-photo {
+.lightbox .lightbox-fleches .precedente .lightbox-precedente, .lightbox .lightbox-fleches .precedente .lightbox-suivante, .lightbox .lightbox-fleches .suivante .lightbox-precedente, .lightbox .lightbox-fleches .suivante .lightbox-suivante {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.lightbox .lightbox-fleches .precedente .lightbox-precedente:hover, .lightbox .lightbox-fleches .precedente .lightbox-suivante:hover, .lightbox .lightbox-fleches .suivante .lightbox-precedente:hover, .lightbox .lightbox-fleches .suivante .lightbox-suivante:hover {
+  font-weight: 800;
+  transition: 0.3s;
+  opacity: 1;
+}
+.lightbox .lightbox-fleches .precedente {
+  padding-left: 20px;
+}
+.lightbox .lightbox-fleches .suivante {
+  padding-right: 20px;
+}
+.lightbox .informations-photo {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -1088,13 +1057,11 @@ main .bloc-les-photos .bouton-accueil .voir-plus:hover {
   font-size: 16px;
   line-height: 21px;
 }
-
-.reference-photo {
+.lightbox .informations-photo .reference-photo {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
-
-.categorie-photo {
+.lightbox .informations-photo .categorie-photo {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
