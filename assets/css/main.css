@@ -243,7 +243,7 @@ header .burger {
   font-size: 1rem;
   text-transform: uppercase;
   justify-content: center;
-  border-top: 2px solid #000000;
+  border-top: 1px solid #000000;
   /* Ajoute une bordure en haut de 2px noire */
   text-align: center;
   margin-top: 50px;
