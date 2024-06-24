@@ -2,10 +2,20 @@
     display: flex;
     gap: 20px;
     justify-content: space-between;
-    margin: 40px 10% 0px 10%;
+    padding: 40px 10% 0px 10%;
+
+    @media (max-width: 767px) {
+        flex-direction: column-reverse;
+        border-bottom: 1px solid black;
+    }
 
     .photo-content {
         width: 50%;
+
+        @media (max-width: 767px) {
+            width: 100%;
+        }
+
         img {
             max-width: 100%;
             height: 100%;
@@ -19,8 +29,14 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    border-bottom: 1px solid black;
+    padding-bottom: 15px;
     /* Bordure en bas */
+    border-bottom: 1px solid black;
+
+    @media (max-width: 767px) {
+        width: 100%;
+        border-bottom: unset;
+    }
 }
 
 .photo-info-content {
