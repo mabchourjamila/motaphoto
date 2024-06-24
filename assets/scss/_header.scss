@@ -1,6 +1,6 @@
 header {
     background-color: $background-color;
-    color: $black; 
+    color: $black;
     height: 80px; // Hauteur du header
     display: flex;
     align-items: center;
@@ -10,7 +10,7 @@ header {
         list-style: none;
     }
 
-    /* Navbar */
+    /* Navbar : style du menu de navigation affiché sur desktop (affichage horizonatal) */
     .navbar {
         display: flex;
         align-items: center;
@@ -35,6 +35,7 @@ header {
                     color: $black;
                     text-decoration: none;
                 }
+
                 :hover {
                     font-weight: 700;
 
@@ -44,12 +45,15 @@ header {
 
     }
 
+    /* masquer le menu burger si l'affichage est desktop */
     .burger {
         display: none;
     }
 
-    /*  Small device */
+    /* afficher le menu burger sur mobile */
     @media screen and (max-width:767.98px) {
+
+        // changement de l'affichage du menu sur mobile (affichage vertical)
         .navbar {
             justify-content: space-between;
             padding: 10px 30px;
@@ -60,7 +64,7 @@ header {
                 flex-direction: column;
                 width: 0;
                 height: calc(100vh - 105px);
-                position: absolute;
+                position: fixed;
                 top: 105px;
                 right: 0;
                 background: $red;
@@ -94,13 +98,14 @@ header {
             }
         }
 
+        // class ajouté avec JS au menu pour l'afficher au click sur le burger
         .show-nav {
             ul {
                 background-color: $red;
                 width: 100%;
                 transform: translateX(0);
 
-                /* Animations */
+                /* Animations pour afficher les élements du menu avec un petit retard */
                 :nth-child(1) {
                     transition: all 1s ease-out;
                 }
@@ -127,7 +132,7 @@ header {
             }
         }
 
-        /* Toggle menu */
+        /* Toggle menu: gestion de l'affichage du burger et transformation des 3 traits en croix  bien hdhdhhfhfhfhfjfiirbgubeugbg*/
         .burger {
             display: block;
             position: relative;
@@ -186,7 +191,7 @@ header {
 
     }
 
-    /*  Medium device - Bonus */
+    /*  ajouter une animation pour les liens du menu affichage desktop  (souligner les liens dans le menu) */
     @media screen and (min-width:768px) {
         li>a::after {
             display: block;
@@ -194,7 +199,7 @@ header {
             width: 0;
             height: 1px;
             background: $black;
-            transition: width .4s;
+            transition: width .7s;
         }
 
         li:hover>a::after {

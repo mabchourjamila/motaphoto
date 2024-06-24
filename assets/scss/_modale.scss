@@ -108,7 +108,8 @@ form.wpcf7-form.init {
     text-align: center;
     font-family: $font-title;
     font-weight: 400;
-    &:hover{
+
+    &:hover {
         font-weight: 700;
         background-color: $black;
         color: $background-color;

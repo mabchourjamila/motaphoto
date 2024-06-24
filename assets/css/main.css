@@ -72,9 +72,10 @@ header {
   display: flex;
   align-items: center;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.0705882353);
-  /* Navbar */
-  /*  Small device */
-  /*  Medium device - Bonus */
+  /* Navbar : style du menu de navigation affiché sur desktop (affichage horizonatal) */
+  /* masquer le menu burger si l'affichage est desktop */
+  /* afficher le menu burger sur mobile */
+  /*  ajouter une animation pour les liens du menu affichage desktop  (souligner les liens dans le menu) */
 }
 header ul {
   list-style: none;
@@ -111,7 +112,7 @@ header .burger {
 }
 @media screen and (max-width: 767.98px) {
   header {
-    /* Toggle menu */
+    /* Toggle menu: gestion de l'affichage du burger et transformation des 3 traits en croix  bien hdhdhhfhfhfhfjfiirbgubeugbg*/
   }
   header .navbar {
     justify-content: space-between;
@@ -123,7 +124,7 @@ header .burger {
     flex-direction: column;
     width: 0;
     height: calc(100vh - 105px);
-    position: absolute;
+    position: fixed;
     top: 105px;
     right: 0;
     background: #E00000;
@@ -153,7 +154,7 @@ header .burger {
     background-color: #E00000;
     width: 100%;
     transform: translateX(0);
-    /* Animations */
+    /* Animations pour afficher les élements du menu avec un petit retard */
   }
   header .show-nav ul :nth-child(1) {
     transition: all 1s ease-out;
@@ -226,7 +227,7 @@ header .burger {
     width: 0;
     height: 1px;
     background: #000000;
-    transition: width 0.4s;
+    transition: width 0.7s;
   }
   header li:hover > a::after {
     width: 100%;
@@ -243,10 +244,11 @@ header .burger {
   font-size: 1rem;
   text-transform: uppercase;
   justify-content: center;
+  /* Ajoute une bordure en haut de 1px noire */
   border-top: 1px solid #000000;
-  /* Ajoute une bordure en haut de 2px noire */
   text-align: center;
   margin-top: 50px;
+  /* Style du menu footer afficher dans le footer */
 }
 @media (max-width: 615px) {
   .footer {
@@ -746,7 +748,9 @@ form.wpcf7-form.init {
     margin: 30px 0 30px 0;
   }
 }
-.filtres .bloc-filtre #categorie-titre.menu-deroulant, .filtres .bloc-filtre #format-titre.menu-deroulant, .filtres .bloc-filtre #tri-titre.menu-deroulant {
+.filtres .bloc-filtre #categorie-titre.menu-deroulant,
+.filtres .bloc-filtre #format-titre.menu-deroulant,
+.filtres .bloc-filtre #tri-titre.menu-deroulant {
   width: 20vw;
   height: 45px;
   border: 1px solid #B8BBC2;
@@ -763,31 +767,47 @@ form.wpcf7-form.init {
   cursor: pointer;
 }
 @media (max-width: 700px) {
-  .filtres .bloc-filtre #categorie-titre.menu-deroulant, .filtres .bloc-filtre #format-titre.menu-deroulant, .filtres .bloc-filtre #tri-titre.menu-deroulant {
+  .filtres .bloc-filtre #categorie-titre.menu-deroulant,
+  .filtres .bloc-filtre #format-titre.menu-deroulant,
+  .filtres .bloc-filtre #tri-titre.menu-deroulant {
     width: 70vw;
   }
 }
-.filtres .bloc-filtre #categorie-titre.menu-deroulant:hover, .filtres .bloc-filtre #format-titre.menu-deroulant:hover, .filtres .bloc-filtre #tri-titre.menu-deroulant:hover {
+.filtres .bloc-filtre #categorie-titre.menu-deroulant:hover,
+.filtres .bloc-filtre #format-titre.menu-deroulant:hover,
+.filtres .bloc-filtre #tri-titre.menu-deroulant:hover {
   border: 1.3px solid #215AFF;
 }
-.filtres .bloc-filtre #categorie-titre.menu-deroulant .menu-titre, .filtres .bloc-filtre #format-titre.menu-deroulant .menu-titre, .filtres .bloc-filtre #tri-titre.menu-deroulant .menu-titre {
+.filtres .bloc-filtre #categorie-titre.menu-deroulant .menu-titre,
+.filtres .bloc-filtre #format-titre.menu-deroulant .menu-titre,
+.filtres .bloc-filtre #tri-titre.menu-deroulant .menu-titre {
   padding-left: 10px;
 }
-.filtres .bloc-filtre #categorie-titre.menu-deroulant .menu-titre.visible, .filtres .bloc-filtre #format-titre.menu-deroulant .menu-titre.visible, .filtres .bloc-filtre #tri-titre.menu-deroulant .menu-titre.visible {
+.filtres .bloc-filtre #categorie-titre.menu-deroulant .menu-titre.visible,
+.filtres .bloc-filtre #format-titre.menu-deroulant .menu-titre.visible,
+.filtres .bloc-filtre #tri-titre.menu-deroulant .menu-titre.visible {
   display: block;
 }
-.filtres .bloc-filtre #categorie-titre.menu-deroulant .menu-titre.cache, .filtres .bloc-filtre #format-titre.menu-deroulant .menu-titre.cache, .filtres .bloc-filtre #tri-titre.menu-deroulant .menu-titre.cache {
+.filtres .bloc-filtre #categorie-titre.menu-deroulant .menu-titre.cache,
+.filtres .bloc-filtre #format-titre.menu-deroulant .menu-titre.cache,
+.filtres .bloc-filtre #tri-titre.menu-deroulant .menu-titre.cache {
   display: none;
 }
-.filtres .bloc-filtre #categorie-titre.menu-deroulant .menu-fleche, .filtres .bloc-filtre #format-titre.menu-deroulant .menu-fleche, .filtres .bloc-filtre #tri-titre.menu-deroulant .menu-fleche {
+.filtres .bloc-filtre #categorie-titre.menu-deroulant .menu-fleche,
+.filtres .bloc-filtre #format-titre.menu-deroulant .menu-fleche,
+.filtres .bloc-filtre #tri-titre.menu-deroulant .menu-fleche {
   padding-right: 10px;
   cursor: pointer;
 }
-.filtres .bloc-filtre #categorie-titre.menu-deroulant .menu-fleche.rotation, .filtres .bloc-filtre #format-titre.menu-deroulant .menu-fleche.rotation, .filtres .bloc-filtre #tri-titre.menu-deroulant .menu-fleche.rotation {
+.filtres .bloc-filtre #categorie-titre.menu-deroulant .menu-fleche.rotation,
+.filtres .bloc-filtre #format-titre.menu-deroulant .menu-fleche.rotation,
+.filtres .bloc-filtre #tri-titre.menu-deroulant .menu-fleche.rotation {
   transform: rotate(180deg) translateX(10px);
   transition: transform 0.5s ease-in-out;
 }
-.filtres .bloc-filtre #categorie-titre.menu-deroulant.menu-ouvert, .filtres .bloc-filtre #format-titre.menu-deroulant.menu-ouvert, .filtres .bloc-filtre #tri-titre.menu-deroulant.menu-ouvert {
+.filtres .bloc-filtre #categorie-titre.menu-deroulant.menu-ouvert,
+.filtres .bloc-filtre #format-titre.menu-deroulant.menu-ouvert,
+.filtres .bloc-filtre #tri-titre.menu-deroulant.menu-ouvert {
   border: 1.3px solid #215AFF;
   border-radius: 8px 8px 0 0;
 }
@@ -865,12 +885,12 @@ main .hero {
 }
 main .hero h1 {
   font-family: "Space Mono", monospace;
+  /* Utilisation de 7% de la largeur de la fenêtre pour la taille de la police */
   font-size: 7vw;
-  /* Utilisation de 10% de la largeur de la fenêtre pour la taille de la police */
   font-style: italic;
   font-weight: 900;
-  line-height: 1.5;
   /* Ajustement du line-height pour qu'il soit proportionnel à la taille de la police */
+  line-height: 1.5;
   text-align: center;
   width: 100%;
   position: absolute;

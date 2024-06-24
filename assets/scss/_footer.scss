@@ -8,8 +8,8 @@
     font-size: 1rem;
     text-transform: uppercase;
     justify-content: center;
+    /* Ajoute une bordure en haut de 1px noire */
     border-top: 1px solid $black;
-    /* Ajoute une bordure en haut de 2px noire */
     text-align: center;
     margin-top: 50px;
 
@@ -22,6 +22,7 @@
         display: flex;
     }
 
+    /* Style du menu footer afficher dans le footer */
     .footer__menu {
         list-style: none;
         display: flex;
