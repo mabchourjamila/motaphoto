@@ -1,13 +1,15 @@
 <!-- template-parts/modale.php -->
- <!-- affichage du modale avec le formulaire de contact -->
+<!-- affichage du modale avec le formulaire de contact -->
 <dialog id="modale" class="modale animate">
-    <button id="close-modale" class="modale__close">X</button>
+    <button id="close-modale" class="modale__close">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
     <div class="modale__content">
-        <img class="modale__header" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/contact-header.png' ?>" alt="contact"/>
+        <img class="modale__header" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/contact-header.png' ?>" alt="contact" />
         <div class="modale__body">
-        <?php
+            <?php
             echo do_shortcode('[contact-form-7 id="f9a9b9a" title="Contact"]');
-        ?>
+            ?>
         </div>
     </div>
 </dialog>

@@ -67,7 +67,8 @@
         justify-content: space-between;
         position: fixed;
 
-        .precedente, .suivante {
+        .precedente,
+        .suivante {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -86,7 +87,8 @@
                 }
             }
 
-            .lightbox-precedente, .lightbox-suivante {
+            .lightbox-precedente,
+            .lightbox-suivante {
                 cursor: pointer;
                 opacity: 0.8;
 
@@ -135,7 +137,32 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.bloc-photo i,
+.lightbox i,
+.modale i {
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        animation: blink 1s infinite;
+        transform: scale(1.2);
     }
 }
