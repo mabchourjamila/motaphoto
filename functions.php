@@ -7,6 +7,7 @@ function motaphoto_theme_setup()
 
     // Support des images mises en avant
     add_theme_support('post-thumbnails');
+
     // Ajout d'un logo personnalisable au panel d'administration de wordpress
     add_theme_support('custom-logo', array(
         'height'      => 100,
@@ -14,6 +15,7 @@ function motaphoto_theme_setup()
         'flex-height' => true,
         'flex-width'  => true,
     ));
+
     // Enregistrer un menu
     register_nav_menus(array(
         'primary' => __('Primary Menu', 'motaphoto'),
@@ -34,8 +36,8 @@ function motaphoto_enqueue_scripts()
     // Enqueue le fichier style.css principal
     wp_enqueue_style('motaphoto-style', get_stylesheet_uri());
 
-    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css', array(), null);
-
+    // Enqueue le fichier CSS des Font Awesome (icons)
+    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/fontawesome.all.min.css');
 
     // Enqueue le fichier CSS compilé à partir de SCSS
     wp_enqueue_style('motaphoto-main', get_template_directory_uri() . '/assets/css/main.css');
@@ -52,6 +54,7 @@ function motaphoto_enqueue_scripts()
         // le JS qui gère les fitres de la page d'accueil
         wp_enqueue_script('script-filtres', get_template_directory_uri() . '/assets/js/filters-homepage.js', array('jquery'),);
     }
+
     // le JS qui gère la lightbox des photos
     wp_enqueue_script('script-lightbox', get_template_directory_uri() . '/assets/js/lightbox.js');
 }
