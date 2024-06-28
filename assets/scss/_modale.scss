@@ -1,3 +1,5 @@
+/* Ce sélecteur cible l'arrière-plan de la boîte de dialogue avec la classe "modale".
+   il permet de personnaliser l'apparence de l'arrière-plan. */
 dialog.modale::backdrop {
     background: rgba(87, 85, 85, 0.253);
     backdrop-filter: blur(1px);
@@ -8,6 +10,7 @@ dialog.modale::backdrop {
         top: -300px;
         opacity: 0;
     }
+
     to {
         top: 0;
         opacity: 1;
@@ -26,6 +29,12 @@ dialog.modale::backdrop {
     left: 0;
     top: 0;
     border: 0;
+
+    @media (max-width: 615px) {
+        max-height: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
 
     &__content {
         position: relative;
@@ -57,8 +66,10 @@ dialog.modale::backdrop {
 
 /* Form container styling */
 .wpcf7-form {
-    max-width: 400px; /* Optional: limit the maximum width of the form container */
-    margin: 0 auto; /* Center the form on the page */
+    max-width: 400px;
+    /* Optional: limit the maximum width of the form container */
+    margin: 0 auto;
+    /* Center the form on the page */
 
     &.init {
         padding-top: 20px;
@@ -87,10 +98,13 @@ dialog.modale::backdrop {
     }
 
     input[type="submit"] {
-        width: 100%; /* Button takes the full width */
+        width: 100%;
+        /* Button takes the full width */
         padding: 15px;
-        background-color: $medium-gray; /* Button background color */
-        color: $black; /* Optional: button text color */
+        background-color: $medium-gray;
+        /* Button background color */
+        color: $black;
+        /* Optional: button text color */
         border: none;
         border-radius: 4px;
         cursor: pointer;
