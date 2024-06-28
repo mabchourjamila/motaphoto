@@ -3,10 +3,10 @@
 .filtres {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     margin: 60px 0 30px 0;
-    gap: 30px;
+    gap: 2.5vw;
 
     @media (max-width: 700px) {
         flex-direction: column;

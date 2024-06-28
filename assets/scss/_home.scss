@@ -8,7 +8,7 @@ main {
             /* Utilisation de 7% de la largeur de la fenêtre pour la taille de la police */
             font-size: 7vw;
             font-style: italic;
-            font-weight: 900;
+            font-weight: 700;
             /* Ajustement du line-height pour qu'il soit proportionnel à la taille de la police */
             line-height: 1.5;
             text-align: center;
@@ -18,9 +18,15 @@ main {
             left: 50%;
             transform: translate(-50%, -50%);
             margin: 0;
-            -webkit-text-stroke: 2px white;
+            -webkit-text-stroke: 2.5px white;
             color: transparent;
             text-transform: uppercase;
+
+            @media (max-width: 615px) {
+                -webkit-text-stroke: 1px white;
+            }
+
+
         }
 
 
@@ -47,12 +53,6 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        .filtres {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
 
         .affichage-des-photos {
             display: flex;
