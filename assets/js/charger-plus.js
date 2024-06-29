@@ -13,11 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
     chargerPlusBouton.addEventListener('click', async function() {
         ordreTriage = selectionTriDESC.classList.contains('selectionne') ? 'DESC' : 'ASC';
 
-        console.log('ordreTriage',ordreTriage)
         // Incrémentation du numéro de page
         page++;
-
-        console.log('page',page)
         
         // Création d'un objet pour envoyer la requête
         const data = new URLSearchParams();
@@ -27,16 +24,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Ajout du nonce de sécurité
         data.append('nonce', myAjax.nonce);
 
-        console.log('data',data)
-
         try {
             // Envoi de la requête
             const reponse = await fetch(myAjax.ajaxurl, {
                 method: 'POST',
                 body: data,
             });
-
-            console.log('reponse',reponse);
 
             if (reponse.ok) {
                 // Réception de la réponse de la requête
@@ -47,10 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(responseData, 'text/html');
                 const figureCompte = doc.querySelectorAll('figure').length;
-                console.log('figureCompte',figureCompte)
-                // L'overlay de chaque photo se charge au clic sur le bouton
-                // à faire
-                //overlay();
+
                 lightbox();
 
                 // Si moins de 8 éléments, le bouton disparait
