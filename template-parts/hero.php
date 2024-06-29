@@ -14,7 +14,7 @@
         if ($photo_aleatoire_hero->have_posts()) {
             while ($photo_aleatoire_hero->have_posts()) {
                 $photo_aleatoire_hero->the_post();
-                the_content();
+                 the_post_thumbnail('large');
             }
             wp_reset_postdata();
         }
