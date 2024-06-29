@@ -149,6 +149,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 zoneLesPhotos.innerHTML = response;
                 // Si le nouveau contenu dispose de moins de 8 photos, alors le bouton charger plus disparaît
                 surveillerChargerPlus();
+                lightbox();
             },
             error: function(error) {
                 console.log(error);
