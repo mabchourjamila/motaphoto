@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     // Gestion de l'ouverture et de la fermeture des menus déroulants
 
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const blocCache = menu.querySelector(".cache");
         const blocVisible = menu.querySelector(".visible");
 
-        fleche.addEventListener("click", function() {
+        fleche.addEventListener("click", function () {
             // Si le menu est déjà ouvert au clic
             if (options.style.display === "block") {
                 options.style.display = "none";
@@ -48,13 +48,13 @@ document.addEventListener("DOMContentLoaded", function() {
         // Ajout d'une class pour le dernier élément afin de gérer le border radius
         choixPossibles[choixPossibles.length - 1].classList.add("dernier");
 
-        choixPossibles.forEach(function(option, index) {
-            option.addEventListener("click", function() {
+        choixPossibles.forEach(function (option, index) {
+            option.addEventListener("click", function () {
                 // Récupération du titre de l'élément pour le passer en titre de menu déroulant
                 titreAModifier.textContent = option.textContent;
 
                 // Suppression des class ajoutées aux précédents clics
-                choixPossibles.forEach(function(choix) {
+                choixPossibles.forEach(function (choix) {
                     choix.classList.remove("selectionne");
                     choix.classList.remove("dernier-selectionne");
                 });
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
     choixOption("tri-titre", "tri-options", triZone);
 
 
-////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////
 
     // Gestion du système de filtrage des photos
 
@@ -108,26 +108,32 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Détection de l'élément sélectionné dans "Catégories" et filtrage en fonction de l'ID de l'élément
-    elementsCategorie.forEach(function(element) {
-        element.addEventListener("click", function() {
-            categorieChangee = element.id;
-            miseAJourPhotos(categorieChangee, formatChange, triChange);
+    elementsCategorie.forEach(function (element) {
+        element.addEventListener("click", function () {
+            if (categorieChangee != element.id) {
+                categorieChangee = element.id;
+                miseAJourPhotos(categorieChangee, formatChange, triChange);
+            }
         });
     });
 
     // Détection de l'élément sélectionné dans "Formats" et filtrage en fonction de l'ID de l'élément
-    elementsFormat.forEach(function(element) {
-        element.addEventListener("click", function() {
-            formatChange = element.id;
-            miseAJourPhotos(categorieChangee, formatChange, triChange);
+    elementsFormat.forEach(function (element) {
+        element.addEventListener("click", function () {
+            if (formatChange != element.id) {
+                formatChange = element.id;
+                miseAJourPhotos(categorieChangee, formatChange, triChange);
+            }
         });
     });
 
     // Détection de l'élément sélectionné dans "Trier par" et filtrage en fonction de l'ID de l'élément
-    elementsTri.forEach(function(element) {
-        element.addEventListener("click", function() {
-            triChange = element.id;
-            miseAJourPhotos(categorieChangee, formatChange, triChange);
+    elementsTri.forEach(function (element) {
+        element.addEventListener("click", function () {
+            if (triChange != element.id) {
+                triChange = element.id;
+                miseAJourPhotos(categorieChangee, formatChange, triChange)
+            }
         });
     });
 
@@ -145,13 +151,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Ajout du nonce de sécurité
                 nonce: myAjax.nonce
             },
-            success: function(response) {
+            success: function (response) {
                 zoneLesPhotos.innerHTML = response;
                 // Si le nouveau contenu dispose de moins de 8 photos, alors le bouton charger plus disparaît
                 surveillerChargerPlus();
                 lightbox();
             },
-            error: function(error) {
+            error: function (error) {
                 console.log(error);
             }
         });
@@ -166,28 +172,28 @@ document.addEventListener("DOMContentLoaded", function() {
     const triVide = document.getElementById("tri-vide");
 
     // Filtre Catégorie
-    categorieVide.addEventListener("click", function() {
+    categorieVide.addEventListener("click", function () {
         categorieChangee = 'all';
-        elementsCategorie.forEach(element => {element.classList.remove("selectionne")});
-        elementsCategorie.forEach(element => {element.classList.remove("dernier-selectionne")});
+        elementsCategorie.forEach(element => { element.classList.remove("selectionne") });
+        elementsCategorie.forEach(element => { element.classList.remove("dernier-selectionne") });
         miseAJourPhotos(categorieChangee, formatChange, triChange);
         categorieZone.textContent = "Catégories";
     });
 
     // Filtre Format
-    formatVide.addEventListener("click", function() {
+    formatVide.addEventListener("click", function () {
         formatChange = 'all';
-        elementsFormat.forEach(element => {element.classList.remove("selectionne")});
-        elementsFormat.forEach(element => {element.classList.remove("dernier-selectionne")});
+        elementsFormat.forEach(element => { element.classList.remove("selectionne") });
+        elementsFormat.forEach(element => { element.classList.remove("dernier-selectionne") });
         miseAJourPhotos(categorieChangee, formatChange, triChange);
         formatZone.textContent = "Formats";
     });
 
     // Filtre Trier par
-    triVide.addEventListener("click", function() {
+    triVide.addEventListener("click", function () {
         triChange = 'ASC';
-        elementsTri.forEach(element => {element.classList.remove("selectionne")});
-        elementsTri.forEach(element => {element.classList.remove("dernier-selectionne")});
+        elementsTri.forEach(element => { element.classList.remove("selectionne") });
+        elementsTri.forEach(element => { element.classList.remove("dernier-selectionne") });
         miseAJourPhotos(categorieChangee, formatChange, triChange);
         triZone.textContent = "Trier par";
     });
