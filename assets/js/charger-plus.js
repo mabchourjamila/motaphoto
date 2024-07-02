@@ -20,9 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const data = new URLSearchParams();
         data.append('action', 'charger_plus');
         data.append('page', page);
-        data.append('order', ordreTriage);
         // Ajout du nonce de sécurité
         data.append('nonce', myAjax.nonce);
+        // Ajout des filtres dans la pagination
+        data.append('order', ordreTriage);
+        data.append('category', window.categorieChangee ?? 'all');
+        data.append('format', window.formatChange ?? 'all');
+        console.log(window.categorieChangee, window.formatChange, window.triChange)
 
         try {
             // Envoi de la requête

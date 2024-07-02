@@ -92,9 +92,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const boutonChargerPlus = document.getElementById("charger-plus");
 
     // Définition des valeurs par défaut
-    let categorieChangee = 'all';
-    let formatChange = 'all';
-    let triChange = 'ASC';
+    // les variables sont globales pour pouvoir les utiliser dans le script charger-plus
+    // pour avoir la pagination des photos filtrées
+    window.categorieChangee = 'all';
+    window.formatChange = 'all';
+    window.triChange = 'ASC';
 
     // Création d'une fonction pour la gestion du bouton charger plus en cas de filtrage avant son utilisation
     function surveillerChargerPlus() {
@@ -110,9 +112,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Détection de l'élément sélectionné dans "Catégories" et filtrage en fonction de l'ID de l'élément
     elementsCategorie.forEach(function (element) {
         element.addEventListener("click", function () {
-            if (categorieChangee != element.id) {
-                categorieChangee = element.id;
-                miseAJourPhotos(categorieChangee, formatChange, triChange);
+            if (window.categorieChangee != element.id) {
+                window.categorieChangee = element.id;
+                miseAJourPhotos(window.categorieChangee, window.formatChange, window.triChange);
             }
         });
     });
@@ -120,9 +122,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Détection de l'élément sélectionné dans "Formats" et filtrage en fonction de l'ID de l'élément
     elementsFormat.forEach(function (element) {
         element.addEventListener("click", function () {
-            if (formatChange != element.id) {
-                formatChange = element.id;
-                miseAJourPhotos(categorieChangee, formatChange, triChange);
+            if (window.formatChange != element.id) {
+                window.formatChange = element.id;
+                miseAJourPhotos(window.categorieChangee, window.formatChange, window.triChange);
             }
         });
     });
@@ -130,9 +132,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Détection de l'élément sélectionné dans "Trier par" et filtrage en fonction de l'ID de l'élément
     elementsTri.forEach(function (element) {
         element.addEventListener("click", function () {
-            if (triChange != element.id) {
-                triChange = element.id;
-                miseAJourPhotos(categorieChangee, formatChange, triChange)
+            if (window.triChange != element.id) {
+                window.triChange = element.id;
+                miseAJourPhotos(window.categorieChangee, window.formatChange, window.triChange)
             }
         });
     });
@@ -140,6 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Fonction de mise à jour des photos
     function miseAJourPhotos(category, format, order) {
         // Envoyer une requête AJAX pour récupérer les photos filtrées
+        console.log(category, format, order)
         jQuery.ajax({
             url: myAjax.ajaxurl,
             type: 'POST',
@@ -173,28 +176,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Filtre Catégorie
     categorieVide.addEventListener("click", function () {
-        categorieChangee = 'all';
+        window.categorieChangee = 'all';
         elementsCategorie.forEach(element => { element.classList.remove("selectionne") });
         elementsCategorie.forEach(element => { element.classList.remove("dernier-selectionne") });
-        miseAJourPhotos(categorieChangee, formatChange, triChange);
+        miseAJourPhotos(window.categorieChangee, window.formatChange, window.triChange);
         categorieZone.textContent = "Catégories";
     });
 
     // Filtre Format
     formatVide.addEventListener("click", function () {
-        formatChange = 'all';
+        window.formatChange = 'all';
         elementsFormat.forEach(element => { element.classList.remove("selectionne") });
         elementsFormat.forEach(element => { element.classList.remove("dernier-selectionne") });
-        miseAJourPhotos(categorieChangee, formatChange, triChange);
+        miseAJourPhotos(window.categorieChangee, window.formatChange, window.triChange);
         formatZone.textContent = "Formats";
     });
 
     // Filtre Trier par
     triVide.addEventListener("click", function () {
-        triChange = 'ASC';
+        window.triChange = 'ASC';
         elementsTri.forEach(element => { element.classList.remove("selectionne") });
         elementsTri.forEach(element => { element.classList.remove("dernier-selectionne") });
-        miseAJourPhotos(categorieChangee, formatChange, triChange);
+        miseAJourPhotos(window.categorieChangee, window.formatChange, window.triChange);
         triZone.textContent = "Trier par";
     });
 });

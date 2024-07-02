@@ -100,12 +100,38 @@ function charger_plus()
 
     $page = $_POST['page'];
     $ordreTriage = $_POST['order'];
+    $category = $_POST['category'] ?? 'all';
+    $format = $_POST['format'] ?? 'all';
+
+    $tax_query = array('relation' => 'AND');
+
+    // Si une catégorie est présente et n'est pas égale à all
+    if (isset($_POST['category']) && $_POST['category'] !== 'all') {
+        $category = $_POST['category'];
+        $tax_query[] = array(
+            'taxonomy' => 'categoriesphotos',
+            'field' => 'slug',
+            'terms' => $category,
+        );
+    }
+
+    // Si un format est présent et n'est pas égal à all
+    if (isset($_POST['format']) && $_POST['format'] !== 'all') {
+        $format = $_POST['format'];
+        $tax_query[] = array(
+            'taxonomy' => 'formats',
+            'field' => 'slug',
+            'terms' => $format,
+        );
+    }
+
     $args = array(
         'post_type' => 'photographies',
         'posts_per_page' => 8,
         'orderby' => 'date',
         'order' => $ordreTriage,
         'paged' => $page,
+        'tax_query' => $tax_query,
     );
 
     $photo_query = new WP_Query($args);
